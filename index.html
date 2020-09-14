@@ -4,11 +4,254 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Etsy Page</title>
+    <link rel="stylesheet" href="main-db.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   </head>
-  <body>
+  <body onload="hideInitial()">
     <div id="main-container"></div>
-    <div id="nav-bar"></div>
+    <div id="nav-bar">
+      <div id="searchbar" class="container">
+        <img
+          src="data:image/png;base64,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"
+          alt=""
+        />
+        <div id="search">
+          <input type="text" />
+        </div>
+
+        <a href="#" id="signin">Sign in</a>
+
+        <a href="#" id="cart"><i class="fa fa-shopping-cart"></i></a>
+      </div>
+
+      <div id="navlinks" class="container">
+        <li><a href="#">Everyday Finds</a></li>
+        <li><a href="expandedcontainer" id="test">Jewelry & Accessories</a></li>
+        <li><a href="#">Clothing & Shoes</a></li>
+        <li><a href="#">Home & Living</a></li>
+        <li><a href="#">Wedding & Party</a></li>
+        <li><a href="#">Toys & Entertainment</a></li>
+        <li><a href="#">Art & Collectibles</a></li>
+        <li><a href="#">Craft & Collectibles</a></li>
+        <li><a href="#">Craft Supplies</a></li>
+        <li><a href="#">Gifts</a></li>
+      </div>
+      <div id="expandedcontainer">
+
+        <div id="jewelryX">
+          <!-- catgories -->
+
+          <div class="col-1" id="column-1">
+
+            <div class="container">
+              <li>All Jewelry & Accessories</li><i class="fa fa-angle-right"></i>
+             </div>  
+
+            <div class="container" href="col-2-acc">
+              <li>Accessories</li><i class="fa fa-angle-right"></i>
+            </div>
+
+            <div class="container" href="col-2-bags">
+              <li>Bags & Purses</li><i class="fa fa-angle-right"></i>
+            </div>
+
+            <div class="container" href="col-2-necklaces">
+              <li>Necklaces</li><i class="fa fa-angle-right"></i>
+            </div>
+
+            <div class="container" href="col-2-rings">
+              <li>Rings</li><i class="fa fa-angle-right"></i>
+            </div>
+
+            <div class="container" href="col-2-earrings">
+              <li>Earrings</li><i class="fa fa-angle-right"></i>
+            </div>
+
+            <div class="container" href="col-2-bracelets">
+              <li>Bracelets</li><i class="fa fa-angle-right"></i>
+            </div>
+
+            <div class="container" href="col-2-body-jewelry">
+              <li>Body Jewelry</li><i class="fa fa-angle-right"></i>
+            </div>
+
+            <div class="container">
+              <li>All Jewelry</li><i class="fa fa-angle-right"></i>
+            </div>
+
+          </div>
+
+          <!-- COL 2 ACC -->
+          <div class="justify-space-between col-2" id="col-2-acc">
+          <div class="" id="">
+            <a href="#"><ul>Hats & Caps</ul></a>
+              <a href="#"><li>Beanies & Winter Caps</li></a>
+              <a href="#"><ul>Hair Accessories</ul></a>
+                <a href="#"><li>Headbands</li></a>
+                <a href="#"><li>Fascinators & Mini Hats</li></a>
+                <a href="#"><li>Wreaths & Tiaras</li></a>
+              <a href="#"><ul>Sunglasses & Eyewear</ul></a>
+              
+            </div>
+            <div class="" id="sub-col-2">
+              <a href="#"><ul>Scarves & Wraps</ul></a>
+              <a href="#"><ul>Belts & Suspenders</ul></a>
+              <a href="#"><ul>Keychains & Lanyards</ul></a>
+              <a href="#"><ul>Gloves & Mittens</ul></a>
+              <a href="#"><ul>Umbrellas & Rain Accessories</ul></a>
+              <a href="#"><ul>All Accessories</ul></a>
+            </div>
+            
+           </div>
+
+           <!-- COL 2 BAGS -->
+
+           <div class="justify-space-between col-2" id="col-2-bags">
+            <div class="" id="">
+              <a href="#"><ul>Backpacks</ul></a>
+              <a href="#"><ul>Handbags</ul></a>
+                <a href="#"><li>Clutches & Evening Bags</li></a>
+                <a href="#"><li>Shoulder Bags</li></a>
+              <a href="#"><ul>Diaper Bags</ul></a>
+      
+              </div>
+              <div class="" id="sub-col-2">r
+                <a href="#"><ul>Luggage & Duffel Bags</ul></a>
+                <a href="#"><ul>Phone Cases</ul></a>
+                <a href="#"><ul>All Bags & Purses</ul></a>  
+              </div>
+              
+             </div>
+
+             <!-- COL 2 NECKLACES -->
+
+             <div class="justify-space-between col-2" id="col-2-necklaces">
+              <div class="" id="">
+                <a href="#"><ul>Pendants</ul></a>
+                <a href="#"><ul>Chokers</ul></a>
+                <a href="#"><ul>Charm Necklaces</ul></a>
+                <a href="#"><ul>Crystal Necklaces</ul></a>
+                <a href="#"><ul>Monogram & Name Necklaces</ul></a>
+                <a href="#"><ul>Beaded Necklaces</ul></a>
+                </div>
+                <div class="" id="sub-col-2">
+                  <a href="#"><ul>Chains</ul></a>
+                  <a href="#"><ul>Tassel Necklaces</ul></a>
+                  <a href="#"><ul>All Necklaces</ul></a>
+                </div>         
+               </div>
+
+
+              <!-- COL-2 RINGS -->
+
+             <div class="justify-space-between col-2" id="col-2-rings">
+              <div class="" id="">
+                <a href="#"><ul>Stackable Rings</ul></a>
+                <a href="#"><ul>Statement Rings</ul></a>
+                <a href="#"><ul>Bands</ul></a>
+                <a href="#"><ul>Signet Rings</ul></a>
+                <a href="#"><ul>Mult-Stone Rings</ul></a>
+                <a href="#"><ul>Solitaire Rings</ul></a>
+                <a href="#"><ul>Midi Rings</ul></a>
+
+                </div>
+                <div class="" id="sub-col-2">
+                  <a href="#"><ul>Wedding & Engagement</ul></a>
+                    <a href="#"><li>Engagement Rings</li></a>
+                    <a href="#"><li>Wedding Bands</li></a>
+                    <a href="#"><li>Promise Rings</li></a>
+                    <a href="#"><li>Bridal Sets</li></a>
+                  <a href="#"><ul>All Rings</ul></a>
+
+                </div>
+                
+               </div>
+
+                   <!-- COL-2 EARRINGS -->
+
+             <div class="justify-space-between col-2" id="col-2-earrings">
+              <div class="" id="">
+                <a href="#"><ul>Dangle & Drop Earrings</ul></a>
+                <a href="#"><ul>Stud Earrings</ul></a>
+                <a href="#"><ul>Hoop Earrings</ul></a>
+                <a href="#"><ul>Chandelier Earrings</ul></a>
+                <a href="#"><ul>Ear Jackets & Climbers</ul></a>
+                
+              </div>
+              <div class="" id="sub-col-2">
+                <a href="#"><ul>Cluster Earrings</ul></a>
+                <a href="#"><ul>Cuff & Wrap Earrings</ul></a>
+                <a href="#"><ul>Clip-On Earrings</ul></a>
+                
+              </div>
+                
+             </div>
+
+             <!-- COL-2 BRACELETS -->
+             
+             <div class="justify-space-between col-2" id="col-2-bracelets">
+              <div class="" id="">
+                <a href="#"><ul>Beaded Bracelets</ul></a>
+                <a href="#"><ul>Bangles</ul></a>
+                <a href="#"><ul>Charm Bracelets</ul></a>
+                <a href="#"><ul>Woven & Braided Bracelets</ul></a>
+                
+              </div>
+              <div class="" id="sub-col-2">
+                <a href="#"><ul>Cuff Bracelets</ul></a>
+                <a href="#"><ul>Chain & Link Bracelets</ul></a>
+                <a href="#"><ul>all Bracelets</ul></a>
+                
+              </div>
+                
+             </div>
+
+             <!-- COL-2 BODY JEWELRY -->
+             
+             <div class="justify-space-between col-2" id="col-2-body-jewelry">
+              <div class="" id="">
+                <a href="#"><ul>Anklets</ul></a>
+                <a href="#"><ul>Hair Jewelry</ul></a>
+                <a href="#"><ul>Nose Rings & Studs</ul></a>
+                <a href="#"><ul>Arm Bands</ul></a>
+                <a href="#"><ul>Nipple Jewelry</ul></a>
+                <a href="#"><ul>Belly Rings</ul></a>
+
+              </div>
+              <div class="" id="sub-col-2">
+                <a href="#"><ul>Shoulder Jewelry</ul></a>
+                <a href="#"><ul>Toe Rings</ul></a>
+                <a href="#"><ul>Lip Rings</ul></a>
+                <a href="#"><ul>All Body Jewelry</ul></a>
+                
+              </div>
+                
+             </div>
+
+          <div class="col-3">
+
+            <div id="excard" class="container justify-center direction-column">
+              <img src="https://i.etsystatic.com/8595828/c/2068/1643/347/721/il/663a12/1888311329/il_340x270.1888311329_cctg.jpg" alt="">
+            <li>Editor's Picks</li>
+            <ul>Jewelry, handbags & accessories</ul>
+            </div>
+          </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
     <div id="items-container"></div>
     <div id="footer"></div>
+
+
+    <script src="main-db.js"></script>
   </body>
 </html>
