@@ -1,0 +1,51 @@
+#items-container {
+  border: 2px solid green;
+  width: 100%;
+  margin: 0px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+#bla {
+  margin: 3px;
+}
+
+img {
+  width: 225px;
+  height: 225px;
+  margin: 2px;
+}
+
+#footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+}
+#id {
+  border: 2px solid blue;
+}
+
+#main-container {
+  display: flex;
+  justify-content: center;
+}
+
+.bar1 {
+  border: 1px solid blue;
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  border-radius: 25px;
+}
+
+.radials {
+  display: flex;
+  flex-direction: column;
+}
+
+.bla {
+  margin: 2px;
+}
