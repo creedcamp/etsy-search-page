@@ -1,3 +1,10 @@
+/*
+step 1 create grid//not done
+step 2 insert items from items.js into each section and have them run 1fr// not done
+step 3 flex pretty
+step 4 adjust image width
+ */
+
 #items-container {
   width: 100%;
   margin: 0px;
@@ -7,6 +14,10 @@
 
 #bla {
   margin: 3px;
+}
+
+#bla h3 {
+  width: 48%;
 }
 
 img {
@@ -42,4 +53,26 @@ input {
 
 .bla {
   margin: 2px;
+}
+
+.bar3 {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+}
+.-bar {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+element.style {
+  width: 27%;
+  padding: 1%;
 }
