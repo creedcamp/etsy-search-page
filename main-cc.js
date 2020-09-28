@@ -11,7 +11,7 @@ const arr = items.results
   .map((item) => {
     return `<div class="bla">
     <a href="${item.url}" target="_blank">
-    <img class="images" src = "${item.Images[0].url_170x135}"/>
+    <img class="resize" src = "${item.Images[0].url_170x135}"/>
     <h3 style= "width: 48%;">${item.title}</h3>
     <p>From ${item.Shop.shop_name}</p>
     <p><div><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></div>, views${item.views}</p>

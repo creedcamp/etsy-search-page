@@ -1,15 +1,15 @@
 /*
-step 1 create grid//not done
-step 2 insert items from items.js into each section and have them run 1fr// not done
-step 3 flex pretty
+step 1 create grid//done
+step 2 insert items from items.js into each section and have them run 1fr// done
+step 3 flex pretty// done
 step 4 adjust image width
  */
 
 #items-container {
   width: 100%;
-  margin: 0px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
 }
 
 #bla {
@@ -30,6 +30,8 @@ img {
   width: 100%;
   display: flex;
   flex-direction: column;
+  border-top: solid darkgrey;
+  background-color: blueviolet;
 }
 
 #main-container {
@@ -37,9 +39,15 @@ img {
   justify-content: center;
 }
 
+.resize {
+  width: 387px;
+  height: auto;
+}
+
 .bar1 {
   display: flex;
   flex-direction: column;
+  margin: 28px;
 }
 
 input {
@@ -48,17 +56,42 @@ input {
 
 .radials {
   display: flex;
-  flex-direction: column;
+}
+
+.circle {
+  background-color: aquamarine;
+  width: 16px;
+  height: 16px;
+  margin: 0px 19px;
+  padding: 11px;
+  text-align: -webkit-center;
+  border-radius: 30px;
 }
 
 .bla {
   margin: 2px;
+  text-align: -webkit-center;
+}
+
+.bar2 {
+  display: flex;
+  flex-direction: column;
+  margin: 13px;
+  text-align: center;
+}
+
+#sub {
+  width: 22%;
+  padding: 9px;
+  margin: 18px;
+  align-self: center;
 }
 
 .bar3 {
   width: 100%;
   display: flex;
   flex-wrap: nowrap;
+  background-color: yellowgreen;
 }
 
 .bottom {
@@ -66,6 +99,43 @@ input {
   flex-direction: column;
   width: 25%;
 }
+
+.soc p {
+  border: 2px solid white;
+  text-align: center;
+  padding: 9px;
+  width: 56%;
+  border-radius: 22px;
+}
+
+.socTag {
+  display: flex;
+  font-size: 181%;
+  margin: 0px 10px;
+}
+
+.tag {
+  width: 12%;
+}
+
+.bar4 {
+  display: flex;
+  justify-content: space-between;
+  background-color: deepskyblue;
+}
+
+.location {
+  width: 25%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.extras {
+  width: 25%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .-bar {
   display: flex;
   flex-direction: column;
